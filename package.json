@@ -1,0 +1,32 @@
+{
+    "title": "debounce",
+    "name": "properjs-debounce",
+    "description": "Limit method calls.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/ProperJS/debounce",
+    "readmeFilename": "README.md",
+    "contributors": [
+        {
+            "name": "Brandon Kitajchuk",
+            "email": "kitajchuk@gmail.com",
+            "url": "http://blkpdx.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ProperJS/debounce.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ProperJS/debounce/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/ProperJS/debounce/blob/master/LICENSE"
+        }
+    ],
+    "main": "debounce",
+    "keywords": [
+        "debounce"
+    ]
+}
