@@ -17,14 +17,18 @@ npm install properjs-debounce --save-dev
 var debounce = require( "properjs-debounce" );
 
 // Fire callback at end of detection period
-debounce(function() {
+var func = debounce(function() {
     // Do stuff here
     
 }, 200 );
 
+func();
+
 // Fire callback at beginning of detection period
-debounce(function() {
+func = debounce(function() {
     // Do stuff here
     
 }, 200, true );
+
+func();
 ```
