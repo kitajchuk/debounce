@@ -2,7 +2,7 @@
     "title": "debounce",
     "name": "properjs-debounce",
     "description": "Limit method calls.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "homepage": "https://github.com/ProperJS/debounce",
     "readmeFilename": "README.md",
     "contributors": [
@@ -27,6 +27,10 @@
     ],
     "main": "debounce",
     "keywords": [
+        "properjs",
         "debounce"
-    ]
+    ],
+    "scripts": {
+        "test": "webpack test/test.js test/dist/common.js ; cp debounce.js test/dist/browser.js"
+    }
 }
