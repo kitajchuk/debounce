@@ -1,63 +1,22 @@
-/*!
- *
- * Debounce methods
- * Sourced from here:
- * http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
- *
- * @debounce
- * @author: kitajchuk
- *
- */
-(function ( factory ) {
-    
-    if ( typeof exports === "object" && typeof module !== "undefined" ) {
-        module.exports = factory();
+export default ( callback, threshold, execAsap, context ) => {
+    let timeout = null;
 
-    } else if ( typeof window !== "undefined" ) {
-        window.debounce = factory();
-    }
-    
-})(function () {
-
-
-    /**
-     *
-     * Limit method calls
-     * @memberof! <global>
-     * @method debounce
-     * @param {function} callback The method handler
-     * @param {number} threshold The timeout delay in ms
-     * @param {boolean} execAsap Call function at beginning or end of detection period
-     *
-     */
-    var debounce = function ( callback, threshold, execAsap ) {
-        var timeout = null;
-        
-        return function debounced() {
-            var args = arguments,
-                context = this;
-            
-            function delayed() {
-                if ( !execAsap ) {
-                    callback.apply( context, args );
-                }
-                
-                timeout = null;
+    return function debounced ( ...args ) {
+        const delayed = () => {
+            if ( !execAsap ) {
+                callback.apply( (context || this), args );
             }
-            
-            if ( timeout ) {
-                clearTimeout( timeout );
-                
-            } else if ( execAsap ) {
-                callback.apply( context, args );
-            }
-            
-            timeout = setTimeout( delayed, (threshold || 100) );
+
+            timeout = null;
         };
+
+        if ( timeout ) {
+            clearTimeout( timeout );
+
+        } else if ( execAsap ) {
+            callback.apply( (context || this), args );
+        }
+
+        timeout = setTimeout( delayed, (threshold || 100) );
     };
-    
-    
-    return debounce;
-
-
-});
+};

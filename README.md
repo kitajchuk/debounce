@@ -1,34 +1,34 @@
-debounce
-========
+ProperJS // debounce
+====================
 
-> Limit method calls.
+> Limit your method calls.
 
 
 
-## Installation
+###Installation
 
 ```shell
-npm install properjs-debounce --save-dev
+npm i properjs-debounce --save-dev
 ```
 
 
-## Usage
+### Usage
 ```javascript
-var debounce = require( "properjs-debounce" );
+import debounce from "properjs-debounce";
 
 // Fire callback at end of detection period
-var func = debounce(function() {
+const end = debounce(() => {
     // Do stuff here
-    
+
 }, 200 );
 
-func();
+end();
 
 // Fire callback at beginning of detection period
-func = debounce(function() {
+const begin = debounce(() => {
     // Do stuff here
-    
+
 }, 200, true );
 
-func();
+begin();
 ```
