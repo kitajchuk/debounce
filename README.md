@@ -5,7 +5,7 @@ ProperJS // debounce
 
 
 
-###Installation
+### Installation
 
 ```shell
 npm i properjs-debounce --save-dev
